@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>4.表单一演示网页</title>
+</head>
+
+<body>
+    <form action="/postResume" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="">用户名</label>
+            <input type="text" name="username" value="admin" placeholder="请输入用户名" />
+        </div>
+        <div>
+            <label for="">密码</label>
+            <input type="password" />
+        </div>
+        <div>
+            <label for="">性别</label>
+            <input type="radio" name="sex" value="male" checked>男</input>
+            <input type="radio" name="sex" value="female" />女
+        </div>
+        <div>
+            <label for="">技能</label>
+            <input type="checkbox" name="HTML" value="HTML" checked />HTML
+            <input type="checkbox" name="CSS" value="CSS" />CSS
+            <input type="checkbox" name="JavaScript" value="JavaScript" />JavaScript
+        </div>
+        <div>
+            <label for="">所在城市</label>
+            <select name="city" size="1">
+                <option value="Beijing">北京</option>
+                <option value="Shanghai">上海</option>
+                <option value="Shenzhen">深圳</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">提交</button>
+            <button type="reset">重置</button>
+        </div>
+    </form>
+</body>
+
+</html>
