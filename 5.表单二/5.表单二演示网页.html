@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>5.表单二演示网页</title>
+</head>
+
+<body>
+    <div id="form1">
+        <h2>表单一</h2>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="">用户名</label>
+                <input type="text" name="username" placeholder="请输入用户名" required />
+            </div>
+            <div>
+                <label for="">密码</label>
+                <input type="password" required />
+            </div>
+            <div>
+                <label>邮箱</label>
+                <input type="email" name="email1" placeholder="请输入合法的email" required />
+            </div>
+            <div>
+                <label for="">性别</label>
+                <input type="radio" name="sex" value="male" checked>男</input>
+                <input type="radio" name="sex" value="female" />女
+            </div>
+
+            <div>
+                <label>喜欢的颜色：</label>
+                <input type="color" name="color" value="#66CCFF" />
+            </div>
+            <div>
+                <lable>生日(年/月/日):</lable>
+                <input type="date" name="birthday" />
+            </div>
+            <div>
+                <lable>生日（年/月）：</lable>
+                <input type="month" name="month" />
+            </div>
+            <div>
+                    <label>生日（年/周）：</label>
+                    <input type="week" name="week" />
+                </div>
+            <div>
+                <lable>幸运数字：</lable>
+                <input type="number" name="number1" />
+            </div>
+            <div>
+                <lable>身高：</lable>
+                <input type="range" name="height" min="0" max="300" />
+            </div>
+            <div>
+                <lable>搜索：</lable>
+                <input type="search" name="search" />
+            </div>
+            <div>
+                <lable>电话：</lable>
+                <input type="tel" name="tel" />
+            </div>
+            <div>
+                <lable>时间：</lable>
+                <input type="time" name="time" />
+            </div>
+            <div><label>个人主页</label><input type="url" name="url" placeholder="https://example.com"
+                    pattern="https://.*" /></div>
+            <div>
+                <label for="">技能</label>
+                <input type="checkbox" name="HTML" value="HTML" checked />HTML
+                <input type="checkbox" name="CSS" value="CSS" />CSS
+                <input type="checkbox" name="JavaScript" value="JavaScript" />JavaScript
+            </div>
+            <div>
+                <label for="">所在城市</label>
+                <select name="city" size="1">
+                    <option value="Beijing">北京</option>
+                    <option value="Shanghai">上海</option>
+                    <option value="Shenzhen">深圳</option>
+                </select>
+            </div>
+            <div>
+                <label>文件上传</label>
+                <input type="file" name="fileupload" accept="img/*" multiple />
+            </div>
+            <div>
+                <label>隐藏栏</label>
+                <input name="hidden" type="hidden" value="xm234jq">
+            </div>
+            <div>
+                <input type="submit" value="submit" />
+                <input type="reset" value="reset" />
+                <input type="button" value="button" />
+                <input type="image" name="img" src="test.jpg" width="5%" />
+            </div>
+        </form>
+    </div>
+    <div id="form2">
+        <h2>表单二</h2>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div>
+                <label>邮箱：</label>
+                <input type="email" name="email2" placeholder="请输入合法的email" required />
+            </div>
+            <div>
+                <label>数字0-100的偶数（正则表达式）：</label>
+                <input type="text" name="number2" placeholder="0-100之间的偶数" pattern="^(10|\d?)[24680]$" required />
+            </div>
+            <div>
+                <label>城市：</label>
+                <input name="datalist" list="cityList" required />
+                <datalist id="cityList">
+                    <option value="北京"></option>
+                    <option value="上海"></option>
+                    <option value="广州"></option>
+                    <option value="深圳"></option>
+                </datalist>
+            </div>
+            <div>
+                <input type="submit" value="submit" />
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
