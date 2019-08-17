@@ -1,0 +1,8 @@
+.mine label{
+    position: absolute;
+    left: 60px;
+    top: 60;
+    height:40px;
+    line-height: 50px;
+    color: rgb(255, 0, 0);
+}
