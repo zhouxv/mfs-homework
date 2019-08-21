@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>代码题2.hover下拉</title>
+    <style>
+        .class1{
+            position: absolute;
+            display: none;   
+        }
+        .class2{
+            position: absolute;
+            left: 80px;
+            display: none;
+        }
+        a:hover{
+            color: red;
+        }
+        #a1:hover~.class1{
+            display: block;
+            color: red;
+        }
+        #a2:hover~.class2{
+            display: block;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="" id="a1">导航一</a>
+    <a href="" id="a2">导航二</a>
+    <br />
+    <label class="class1" for="">1</label> <label class="class2" for="">21</label>
+    <br />
+    <label class="class1" for="">2</label> <label class="class2" for="">22</label>
+    <br />
+    <label class="class1" for="">3</label> <label class="class2" for="">23</label>
+    <br />
+    </ul>
+
+
+</body>
+
+</html>

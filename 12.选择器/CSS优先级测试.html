@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS优先级测试 </title>
+    <style>
+        #a1 {
+            color: yellow;
+        }
+
+        .testClass {
+            color: blue;
+        }
+
+        a:first-child {
+            color: orange;
+        }
+
+        [href] {
+            color: green;
+        }
+
+        a {
+            color: grey;
+        }
+
+        * {
+            color: purple;
+        } 
+
+        div #child.class1 {
+            color: blue;
+        }
+        #parent p.class1 {
+            color: red;
+        }
+
+
+    </style>
+</head>
+
+<a href="https://www.baidu.com" id="a1" class="testClass" style="color: red">百度</a>
+
+<div id="parent">
+    <p id="child" class="class1">
+        Text
+    </p>
+</div>
+
+</html>
