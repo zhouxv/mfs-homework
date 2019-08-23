@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>15.盒模型代码题演示网页</title>
+    <style>
+        .container {
+            height: 800px;
+            width: 800px;
+            position: relative;
+            border: red solid;
+        }
+
+        .box1 {
+            line-height: 800px;
+            width: 100px;
+            border: green solid;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            margin: auto auto;
+            border: blue solid;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1">
+            用line-height实现垂直居中
+        </div>
+        <div class="box2">
+            完全居中
+            完全居中
+            完全居中
+            完全居中
+            完全居中
+            完全居中
+            （不使用line-height）
+        </div>
+    </div>
+</body>
+
+</html>
