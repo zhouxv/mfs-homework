@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>骰子</title>
+    <style>
+        .container {
+            background: black;
+            width: 1200px;
+            height: 200px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        p {
+            height: 30px;
+            width: 30px;
+            background: black;
+            border-radius: 50%;
+        }
+
+        .container>div {
+            height: 150px;
+            width: 150px;
+            background: white;
+            border: 3px gray solid;
+            border-radius: 10%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #point1,
+        #point4,
+        #point6 {
+            align-content: center;
+            justify-content: center;
+        }
+        #point1 p {
+            margin: auto auto;
+        }
+
+        #point4 p {
+            margin: 15px 15px;
+        }
+
+        #point6 p {
+            margin: 10px 20px;
+        }
+
+        #point2,#point3,#point5{
+            flex-wrap: wrap;
+            flex-flow: column wrap;
+            justify-content: space-around;
+        }
+
+        #point2 p {
+            margin: 0 20px;
+        }
+        
+        #point3 p {
+            margin: 0 20px;
+        }
+
+        #point5 p {
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="point1">
+            <p></p>
+        </div>
+        <div id="point2">
+            <p style="align-self: flex-start"></p>
+            <p style="align-self: flex-end"></p>
+        </div>
+        <div id="point3">
+            <p style="align-self: flex-start"></p>
+            <p style="align-self: center"></p>
+            <p style="align-self: flex-end"></p>
+        </div>
+        <div id="point4">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+        <div id="point5">
+            <p></p>
+            <p></p>
+            <p style="margin:27px auto "></p>
+            <p></p>
+            <p></p>
+        </div>
+        <div id="point6">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+</body>
+
+</html>
