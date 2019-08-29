@@ -178,7 +178,7 @@ aside {
     border-top: 1px solid #f4645f;
     width: 30%;
     position: absolute;
-    top: 37px;
+    bottom: -1ox;
 }
 
 .document a {
@@ -223,19 +223,20 @@ footer h4 {
     color: white;
     font-weight: 400;
     font-size: 21px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ebebeb;
-    margin-bottom: 15px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #303030;
+    line-height: 1.1;
+    margin-bottom: 21px;
     position: relative;
 }
 
 footer h4::after {
     display: block;
     content: " ";
-    border-top: 1px solid #f4645f;
+    border-bottom: 1px solid #f4645f;
     width: 30%;
     position: absolute;
-    top: 37px;
+    bottom: -1px;
 }
 
 .newArticle a {
