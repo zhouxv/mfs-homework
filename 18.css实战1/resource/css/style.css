@@ -275,6 +275,14 @@ footer h4::after {
     margin: 0 7px 7px 0;
 }
 
+.hr{
+    display: block;
+    width: 100%;
+    padding-bottom: 25px !important;
+    margin-bottom: 10px !important;
+    border-bottom: 1px dashed #303030;
+}
+
 .copyright {
     background: #111;
     font-size: 13px;
