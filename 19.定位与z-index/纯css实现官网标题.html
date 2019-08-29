@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>19.定位与z-index</title>
+    <title>纯css实现官网标题</title>
     <style>
-body{
-    border: 1px solid yellow;
-}
+        h3 {
+            border: 1px solid #333;
+            border-radius: 5px;
+            width: 12%;
+            position: relative;
+            top: 10%;
+            left: 50%;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-around;
+            align-items: center;
+        }
 
-    .father{
-        background: grey;
-        width: 500px;
-        height: 500px;
-        position: absolute;
-        
-    }
+        h3::before {
+            content: " ";
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            display: block;
+            background-color: #ffea00;
+            z-index: 1;
+            border-radius: 50%;
+            left: -15px;
+            top: 23px;
+        }
 
-    .son{
-        background: red;
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        top: 100px;
-    }
+        h3::after {
+            content: " ";
+            width: 0;
+            height: 0;
+            position: absolute;
+            display: block;
+            z-index: 1;
+            border: 20px solid transparent;
+            border-right: 20px solid #ffea00;
+            top: -15px;
+            right: 20px;
+            transform: rotate(-16deg);
+        }
+
+        p {
+            margin: 8px 0 8px 0;
+            line-height: 1.15;
+        }
     </style>
 </head>
-<body>
-    <div class="father">
 
-    </div> 
-    <br>
-    <div class="father">
-        <div class="son"></div>
-    </div>
+<body>
+    <h3>
+        <p style="font-size: 12px;">SHARED COURSE</p>
+        <p style="font-size: 28px;font-weight: 500;">课程分享</p>
+    </h3>
 </body>
+
 </html>
