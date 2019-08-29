@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>第二题</title>
+	<style>
+		body {
+			margin: 0;
+			font-size: 14px;
+			color: #333;
+		}
+
+		a {
+			text-decoration: none;
+			color: #777;
+			text-align: center;
+		}
+
+		a:hover {
+			color: #333;
+		}
+
+
+		.nav-default {
+			background: #f8f8f8;
+			border: 1px solid #e7e7e7;
+			width: 100%;
+			min-height: 50px;
+			position: fixed;
+		}
+
+		.container {
+			display: flex;
+			flex-flow: row wrap;
+			min-height: 50px;
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		.nav-header {
+			margin:15px;
+			font-size: 18px;
+			line-height: 20px;
+		}
+
+		.nav-ul {
+			list-style: none;
+			padding: 0;
+			display: flex;
+			margin: 0;
+		}
+
+		.nav-ul>li {
+			display: inline;
+			padding: 16px 15px;
+			position: relative;
+		}
+
+		.active {
+			color: #555;
+			background-color: #e7e7e7;
+		}
+
+		.dropdown:hover{
+			background-color: #e7e7e7;
+		}
+		.dropdown:hover .dropdown-menu{
+			display: flex;
+		}
+
+		.caret {
+			display: inline-block;
+			width: 0;
+			height: 0;
+			margin-left: 2px;
+			vertical-align: middle;
+			border-top: 4px dashed;
+			border-right: 4px solid transparent;
+			border-left: 4px solid transparent;
+		}
+
+		.dropdown-menu {
+			position: absolute;
+			top: 99%;
+			left: 0;
+			z-index: 2;
+			float: left;
+			min-width: 160px;
+			padding: 5px 0;
+			margin: 2px 0 0;
+			font-size: 14px;
+			text-align: left;
+			list-style: none;
+			background-color: #fff;
+			-webkit-background-clip: padding-box;
+			background-clip: padding-box;
+			border: 1px solid #ccc;
+			border: 1px solid rgba(0, 0, 0, .15);
+			border-radius: 4px;
+			-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+			box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+			display: none;
+			flex-flow: column;
+		}
+		.dropdown-menu>li{
+			margin:5px 20px;
+		}
+
+		.divider {
+			height: 1px;
+			margin: 9px 0;
+			overflow: hidden;
+			background-color: #e5e5e5;
+		}
+
+		@media (max-width: 768px){
+			.container{
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			.nav-ul{
+				flex-direction: column;
+				width: 100%;
+			}
+
+			.nav-ul>li{
+				width: 100%;
+			}
+
+			.dropdown-menu{
+				width: 100%;
+				background-color: #f8f8f8;
+			}
+
+		}
+
+	</style>
+</head>
+
+<body>
+
+	<nav class="nav-default">
+		<div class="container">
+			<a class="nav-header" href="#">菜鸟教程</a>
+
+			<ul class="nav-ul">
+				<li class="active"><a href="#">IOS</a></li>
+				<li><a href="#">SVN</a></li>
+
+				<li class="dropdown">
+					<a href="#">
+						Java
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">jmeter</a></li>
+						<li><a href="#">EJB</a></li>
+						<li><a href="#">Jasper Report</a></li>
+						<p class="divider"></p>
+						<li><a href="#">分离的链接</a></li>
+						<p class="divider"></p>
+						<li><a href="#">另一个分离的链接</a></li>
+					</ul>
+				</li>
+			</ul>
+
+		</div>
+
+	</nav>
+
+</body>
+
+</html>
