@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三种方法实现完全居中</title>
+    <style>
+        .container1 {
+            line-height: 50px;
+            height: 50px;
+            background: yellow;
+            text-align: center;
+        }
+
+        .item1 {
+            display: inline;
+            background: green;
+        }
+
+        .container2 {
+            background: yellow;
+            min-height: 50px;
+            width: 100%;
+            position: relative;
+        }
+
+        .item2 {
+            background: green;
+            margin: auto;
+            position: absolute;
+            height: 21px;
+            width: 82.906px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .container3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50px;
+            background: yellow;
+        }
+
+        .item3 {
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>text-align + line-height + height + display: inline</h3>
+        <div class="container1">
+            <div class="item1">
+                this is item
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3>position: absolute;+top、bottom、left、right:0;+width、height</h3>
+        <div class="container2">
+            <div class="item2">
+                this is item
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3>flex布局</h3>
+        <div class="container3">
+            <div class="item3">
+                this is item
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

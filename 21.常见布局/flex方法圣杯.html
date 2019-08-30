@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex方法圣杯</title>
+    <style>
+        .all {
+            display: flex;
+            flex-direction: column;
+            min-height: 500px;
+        }
+
+        .header,
+        .footer {
+            flex: 1;
+            background: yellowgreen;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+
+        }
+
+        .content>div {
+            margin: 5px;
+        }
+
+        .main {
+            flex: 0 0 60%;
+            background: red
+        }
+
+        
+        .left{
+            flex: 1;
+            background: grey;
+            order: -1;
+        }
+
+        .right {
+            flex: 1;
+            background: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <header class="header">
+            头部
+        </header>
+        <div class="content">
+            <div class="main fl">
+                主栏
+            </div>
+            <div class="left fl">左侧栏
+            </div>
+            <div class="right fl">
+                右侧栏
+            </div>
+        </div>
+        <footer class="footer">
+            尾部
+        </footer>
+    </div>
+</body>
+
+</html>
