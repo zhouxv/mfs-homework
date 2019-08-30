@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>传统方法圣杯</title>
+    <style>
+        .header,
+        .footer {
+            min-height: 100px;
+            background: yellowgreen;
+        }
+
+        .content {
+            background: black;
+            padding: 0 200px;
+            overflow: hidden;
+        }
+
+        .content>div{
+            min-height: 400px;
+        }
+
+        .main {
+            background: red;
+            width: 100%;
+        }
+
+        .left {
+            background: yellow;
+            width: 200px;
+            margin-left: -100%;
+            position: relative;
+            left: -200px;
+        }
+
+        .right {
+            background: yellow;
+            width: 200px;
+            margin-left: -200px;
+            position: relative;
+            right: -200px;
+        }
+
+        .fl {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+    </header>
+    <div class="content">
+        <div class="main fl">
+            主栏
+        </div>
+        <div class="left fl">左侧栏
+        </div>
+        <div class="right fl">
+            右侧栏
+        </div>
+    </div>
+    <footer class="footer">
+    </footer>
+</body>
+
+</html>
