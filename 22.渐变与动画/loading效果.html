@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>loading效果</title>
+    <style type="text/css">
+        @keyframes rotation {
+            0% {
+                transform: rotate(0);
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(150px, 0);
+            }
+
+            75% {
+                transform: translate(-75px, 0);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #F5F5F5; 
+        }
+
+        .container {
+            height: 200px;
+            width: 200px;
+            animation: rotation 5s infinite linear;
+            background: #F5F5F5;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+        }
+
+        .box1,
+        .box2 {
+            border: 1px red solid;
+            flex-basis: 0 0 50%;
+            height: 50%;
+            display: flex;
+            justify-content: space-between;
+            }
+
+        .circle-group{
+            flex: 0 0 50%;
+            height: 100%;
+            border: 1px solid yellow;
+            position: relative;
+        }
+
+        .circle{
+             position: absolute;
+             animation: move 3s infinite; 
+        }
+
+        .circle-group .circle:nth-child(1){
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            top:45px;
+            left: 45px;
+            animation-delay: .5s;
+        }
+
+        .circle-group .circle:nth-child(2){
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            top:40px;
+            left: 40px;
+            animation-delay: .25s;
+        }
+
+        .circle-group .circle:nth-child(3){
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            top:25px;
+            left: 25px;
+            animation-delay: 0;
+        }
+
+        .circle-yellow{
+            background: yellow;
+        }
+
+        .circle-yg{
+            background: yellowgreen;
+        }
+
+        .circle-blue{
+            background: blue;
+
+        }
+
+        .circle-red{
+            background: red;
+        }
+
+        .rotate-45{
+            transform: rotate(45deg) translate(0,20px);
+        }
+
+        .rotate-225{
+            transform: rotate(225deg) translate(0,20px);;
+        }
+
+        .rotate-135{
+            transform: rotate(135deg) translate(0,20px);;
+        }
+
+        .rotate-315{
+            transform: rotate(315deg) translate(0,20px);;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <body>
+        <div class="container">
+            <div class="box1">
+                <div class="rotate-45 circle-group">
+                    <div class="circle circle-yellow"></div>
+                    <div class="circle circle-yellow"></div>
+                    <div class="circle circle-yellow"></div>
+                </div>
+
+                <div class="rotate-135 circle-group">
+                    <div class="circle circle-yg"></div>
+                    <div class="circle circle-yg"></div>
+                    <div class="circle circle-yg"></div>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="rotate-315 circle-group">
+                    <div class="circle circle-blue"></div>
+                    <div class="circle circle-blue"></div>
+                    <div class="circle circle-blue"></div>
+                </div>
+                <div class="rotate-225 circle-group">
+                    <div class="circle circle-red"></div>
+                    <div class="circle circle-red"></div>
+                    <div class="circle circle-red"></div>
+                </div>
+            </div>
+
+    </body>
+</body>
+
+</html>
