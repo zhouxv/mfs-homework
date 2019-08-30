@@ -55,14 +55,13 @@
         .navlink:hover{
             opacity: 0.8;
         }
-    
+
         .drop{
             position: relative;
-            overflow: hidden;
         }
 
-        .drop:hover{
-            overflow: unset;
+        .drop:hover .dropdown{
+            opacity: 1;
          }  
 
          .dropdown{
@@ -72,6 +71,11 @@
             width: 200%;
             display: flex;
             flex-flow: column;
+            transition: opacity 2s;
+            opacity: 0;
+        }
+        .dropdown li{
+            margin: 10px 0;
         }
 
         .drop-link{
@@ -97,8 +101,8 @@
                 <div class="drop navlink">
                      社区 
                     <ul class="dropdown">
-                        <li><a class="drop-link">论坛</a></li>
-                        <li><a class="drop-link">闯关任务</a></li>
+                        <li>论坛</li>
+                        <li>闯关任务</li>
                     </ul>
                 </div>
                 <a class="navlink" href="">关于我们</a>
