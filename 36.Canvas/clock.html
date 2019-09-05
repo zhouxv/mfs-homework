@@ -58,7 +58,7 @@ function clock(){
 
   ctx.fillStyle = "black";
 
-  // write Hours
+  //画时针
   ctx.save();
   ctx.rotate( hour*(Math.PI/6) + (Math.PI/360)*min + (Math.PI/21600)*second )
   ctx.lineWidth = 14;
@@ -68,7 +68,7 @@ function clock(){
   ctx.stroke();
   ctx.restore();
 
-  // write Minutes
+  //画分针
   ctx.save();
   ctx.rotate( (Math.PI/30)*min + (Math.PI/1800)*second )
   ctx.lineWidth = 10;
@@ -78,7 +78,7 @@ function clock(){
   ctx.stroke();
   ctx.restore();
  
-  // Write seconds
+  //画秒针
   ctx.save();
   ctx.rotate(second * Math.PI/30);
   ctx.strokeStyle = "#D40000";
@@ -99,6 +99,7 @@ function clock(){
   ctx.fill();
   ctx.restore();
 
+// 表盘外圈
   ctx.beginPath();
   ctx.lineWidth = 14;
   ctx.strokeStyle = '#325FA2';
