@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>taps</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .class-nav {
+            display: flex;
+        }
+
+        .tap {
+            flex-basis: 33.33%;
+            min-height: 5vh;
+            line-height: 5vh;
+            text-align: center;
+            border: 2px solid silver;
+            background: #10cdee;
+        }
+
+        .tap:hover{
+            border-bottom: 2px solid #f78ab7;
+            cursor: pointer;
+        }
+
+        .panel {
+            display: flex;
+            flex-flow: column;
+        }
+
+
+        .content {
+            text-align: center;
+            min-height: 10vh;
+            line-height: 10vh;
+            border: 1px silver solid;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav class="class-nav">
+            <div class="tap">tap1</div>
+            <div class="tap">tap2</div>
+            <div class="tap">tap3</div>
+        </nav>
+        <div class="panel">
+            <div class="content">
+                这是第一个标签
+            </div>
+            <div class="hidden">
+                标签二
+            </div>
+            <div class="hidden">
+                标签三
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var taps = document.getElementsByClassName("tap");
+        console.log(taps);
+        var contents = document.querySelectorAll(".panel div");
+        console.log(contents);
+
+        for (var i = 0; i < taps.length; i++) {
+            (function (i) {
+                taps[i].onclick=function () {
+                    for (var x in contents) {
+                        contents[x].className = "hidden";
+                    }
+                    contents[i].className = "content";
+                }})(i);
+        }
+
+    </script>
+
+</body>
+
+</html>

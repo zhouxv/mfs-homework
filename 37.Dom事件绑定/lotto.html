@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lotto</title>
+</head>
+
+<body>
+    <div id="award">点击“开始“按钮，开始抽奖！</div>
+    <div class="action">
+        <button id="start" onclick="start()">开 始</button>
+        <button id="stop" onclick="stop()">停 止</button>
+    </div>
+    <script>
+        var panel = document.getElementById("award");
+        var startButton = document.getElementById("start");
+
+        var handle;
+
+        function start() {
+            handle = setInterval(change, 50);
+            startButton.onclick = "";
+        }
+        function stop() {
+            clearInterval(handle);
+            startButton.onclick = start;
+        }
+
+        function change() {
+            var ranNum = Math.random();
+            if (ranNum >= 0 && ranNum < 0.19) {
+                panel.innerText = "鼓励奖";
+            } else if (ranNum < 0.59) {
+                panel.innerText = "三等奖";
+            } else if (ranNum < 0.89) {
+                panel.innerText = "二等奖";
+            } else if (ranNum < 0.99) {
+                panel.innerText = "一等奖";
+            } else {
+                panel.innerText = "特等奖";
+            }
+        }
+    </script>
+</body>
+
+</html>
