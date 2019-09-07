@@ -1,0 +1,121 @@
+body{
+    margin: 0;
+}
+
+.banner{
+    background: url("https://work.mafengshe.com/static/imgs/banner.jpg") 0 -90px;
+    height: 180px; 
+}   
+
+.title h2{
+    position: relative;
+    top:0;
+    left:20px;
+    margin: 10px;
+}
+
+.content{
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.item{
+    height: 148px;
+    flex:0 1 20%;
+    background: #4cd8e0;
+    margin: 10px 10px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.itemPlaceHolder{
+    flex:0 1 20%;
+    margin: 10px 10px;
+    border-radius: 10px;
+}
+
+.circle{
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    background: #20b6d2;
+    position: absolute;
+    top:-15px;
+    left: -15px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.circle span{
+    color: #000;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.bottom{
+    background: #00474c;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.bottom span{
+    color: rgba(255, 255, 255, 0.8)
+}
+
+.info{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 14px;
+}
+
+.info span{
+    display: inline-block;
+    margin: 5px 5px;    
+}
+
+.xiaolian{
+    position: absolute;
+    top:-20px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    height: 60px;
+    width: 60px;
+    font-size: 60px;
+}
+
+.pager{
+    display: flex;
+    justify-content: center;
+}
+
+.pager>*{
+    height: 39px;
+    padding:0 10px;
+    line-height: 39px;
+    text-align: center;
+}
+
+.page>a{
+    height: 39px;
+    padding:10px 10px;
+    line-height: 39px;
+    text-align: center;
+    color: #444;
+    text-decoration: none;
+}
+
+.page>a:hover{
+    background: #697d7e;
+}
+
+.bg-red{
+    background: red;
+}
+
