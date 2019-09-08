@@ -57,5 +57,4 @@ function fillPager()
 function load(){
     fillPager();
     fillPanel(0);
-    
 }
