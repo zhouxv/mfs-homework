@@ -57,6 +57,9 @@
         </p>
     </form>
     <script>
+        document.domain = "zhouxv.com";
+        console.log("frame里页面的domain" + document.domain);
+
         var user = document.getElementById("username");
         var pass = document.getElementById("password");
         var pass_2 = document.getElementById("password-2");
@@ -147,11 +150,11 @@
 
         }
 
-        function signup(){ 
-            var flag_1=userFocus();
-            var flag_2=passFocus();
-            var flag_3=passFocus2();
-            return flag_1&&flag_2&&flag_3;
+        function signup() {
+            var flag_1 = userFocus();
+            var flag_2 = passFocus();
+            var flag_3 = passFocus2();
+            return flag_1 && flag_2 && flag_3;
         }
 
         user.addEventListener("focus", userFocus);
@@ -160,7 +163,6 @@
         pass.addEventListener("blur", passBlur);
         pass_2.addEventListener("focus", passFocus2);
         pass_2.addEventListener("blur", passBlur2);
-
 
     </script>
 </body>
