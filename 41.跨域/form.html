@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单验证</title>
+    <style>
+        .container {
+            border: 1px #daff84 solid;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+        }
+
+
+        .container label {
+            display: inline-block;
+            min-width: 100px;
+        }
+
+        .true {
+            color: greenyellow;
+        }
+
+        .false {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="signup" action="#" target="_blank" onsubmit="return signup()">
+
+        <div class="container">
+            <p>
+                <label for="username">用户名:</label>
+                <input id="username" type="text" name="username">
+                <label id="panel-1"></label>
+            </p>
+            <p>
+                <label for="password">口令:</label>
+                <input type="password" id="password" name="password">
+                <label id="panel-2"></label>
+            </p>
+            <p>
+                <label for="password-2">重复口令:</label>
+                <input type="password" id="password-2">
+                <label id="panel-3"></label>
+            </p>
+        </div>
+        </div>
+        <p>
+            <button type="submit">提交</button>
+            <button type="reset">重置</button>
+        </p>
+    </form>
+    <script>
+        document.domain = "zhouxv.com";
+        console.log("frame里页面的domain" + document.domain);
+
+        var user = document.getElementById("username");
+        var pass = document.getElementById("password");
+        var pass_2 = document.getElementById("password-2");
+
+        var panel_1 = document.getElementById("panel-1");
+        var panel_2 = document.getElementById("panel-2");
+        var panel_3 = document.getElementById("panel-3");
+
+        function userFocus() {
+            var content = user.value;
+            if (!!content) {
+                return userBlur();
+            } else {
+                panel_1.className = "false";
+                panel_1.innerText = "请输入您的用户名";
+                return false;
+            }
+        }
+
+        function userBlur() {
+            var content = user.value;
+            var reg = /^[A-Za-z_0-9]{6,16}$/;
+            if (reg.test(content)) {
+                panel_1.className = "true";
+                panel_1.innerText = "该用户名可用";
+                return true;
+            } else {
+                panel_1.className = "false";
+                panel_1.innerText = "非法用户名!";
+                return false;
+            }
+        }
+
+
+        function passFocus() {
+            var content = pass.value;
+            if (!!content) {
+                return passBlur();
+            } else {
+                panel_2.className = "false";
+                panel_2.innerText = "请输入您的密码";
+                return false;
+            }
+
+        }
+        function passBlur() {
+            var content = pass.value;
+            var reg = /^.{8,20}$/;
+            if (reg.test(content)) {
+                panel_2.className = "true";
+                panel_2.innerText = "该密码可用";
+                return true;
+            } else {
+                panel_2.className = "false";
+                panel_2.innerText = "非法密码!";
+                return false;
+            }
+        }
+        function passFocus2() {
+            var content = pass_2.value;
+            if (!!content) {
+                return passBlur2();
+            } else {
+                panel_3.className = "false";
+                panel_3.innerText = "请输入密码";
+                return false;
+            }
+
+        }
+        function passBlur2() {
+            var content = pass_2.value;
+            try {
+                var pass = pass.value;
+            } catch (e) {
+                panel_2.className = "false";
+                panel_2.innerText = "请先输入密码!";
+            }
+
+            if (pass && (pass == content)) {
+                panel_3.className = "true";
+                panel_3.innerText = "正确!";
+                return true;
+            } else {
+                panel_3.className = "false";
+                panel_3.innerText = "非法密码!";
+                return false;
+            }
+
+        }
+
+        function signup() {
+            var flag_1 = userFocus();
+            var flag_2 = passFocus();
+            var flag_3 = passFocus2();
+            return flag_1 && flag_2 && flag_3;
+        }
+
+        user.addEventListener("focus", userFocus);
+        user.addEventListener("blur", userBlur);
+        pass.addEventListener("focus", passFocus);
+        pass.addEventListener("blur", passBlur);
+        pass_2.addEventListener("focus", passFocus2);
+        pass_2.addEventListener("blur", passBlur2);
+
+
+    </script>
+</body>
+
+</html>

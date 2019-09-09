@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jsonp</title>
+    <script>
+        
+    </script>
+</head>
+
+<body>
+    <script>
+        function callback(data) {
+            console.log(data);
+        }
+
+        var script = document.createElement('script');
+        script.src = '//localhost:8081/41.%E8%B7%A8%E5%9F%9F/json.html';
+        document.body.appendChild(script);
+    </script>
+</body>
+
+</html>
