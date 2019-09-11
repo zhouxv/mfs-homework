@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+</head>
+
+<body>
+    请输入密码:<br>
+    密码要求:
+    <ul>
+        <li>6-16个字符</li>
+        <li>首字符为字母或者下划线</li>
+        <li>应该包括小写字母，大写字母，数字，下划线中的至少3个</li>
+        <li>不能包括其他特殊字符</li>
+    </ul>
+    <input type="text" id="password">
+    <button id="test">检测</button>
+    <p id="panel"></p>
+    <script>
+        function checkPassword(str) {
+            var reg1 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z_][A-Za-z_0-9]{5,15}$/;
+            var reg2 = /^(?=.*[a-z])(?=.*[0-9])(?=.*_)[A-Za-z_][A-Za-z_0-9]{5,15}$/;
+            var reg3 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*_)[A-Za-z_][A-Za-z_0-9]{5,15}$/;
+            var reg4 = /^(?=.*[A-Z])(?=.*[0-9])(?=.*_)[A-Za-z_][A-Za-z_0-9]{5,15}$/;
+            if (reg1.test(str) | reg2.test(str) | reg3.test(str) | reg4.test(str)) return true;
+            return false;
+        }
+
+        document.getElementById("test").addEventListener("click", function () {
+            if (checkPassword(document.getElementById("password").value))
+                document.getElementById("panel").innerHTML = "密码通过";
+            else document.getElementById("panel").innerHTML = "密码错误";
+
+        });
+
+    </script>
+</body>
+
+</html>
