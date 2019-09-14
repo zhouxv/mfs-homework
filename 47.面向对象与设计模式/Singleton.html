@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>单例模式</title>
+</head>
+
+<body>
+    <script>
+        function Singleton(name) {
+            this.name = name;
+        };
+        Singleton.prototype.getName = function () {
+            return this.name;
+        }
+        // 获取实例对象
+        Singleton.getInstance = function () {
+            if (!this.instance) {
+                this.instance = new Singleton();
+            }
+            return this.instance;
+        }
+    </script>
+</body>
+
+</html>

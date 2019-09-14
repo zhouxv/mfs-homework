@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>instanceOf</title>
+</head>
+
+<body>
+    <script>
+        function MyInstanceOf(obj, Clazz) {
+            var o
+            while (true) {
+                if (obj === null | obj === undefined | obj === false) {
+                    return false;
+                }
+                if (obj.__proto__ == Clazz.prototype) {
+                    return true;
+                }
+                obj = obj.__proto__;
+            }
+        }
+    </script>
+</body>
+
+</html>

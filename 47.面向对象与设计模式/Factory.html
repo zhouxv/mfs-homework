@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>工厂模式</title>
+</head>
+
+<body>
+    <script>
+        function Fruit(type) {
+            var fruit;
+            if (type == "apple") {
+                fruit = new Apple();
+            } else if (type == "orange") {
+                fruit = new Orange();
+            }
+            fruit.description = function () {
+                console.log("It's a " + this.name + ", and it's " + this.color);
+            }
+            return fruit;
+
+        }
+
+        function Apple() {
+            this.name = "apple";
+            this.color = "red";
+        }
+        function Orange() {
+            this.name = "orange";
+            this.color = "yellow";
+        }
+
+
+    </script>
+</body>
+
+</html>
