@@ -3,79 +3,60 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>回到顶部</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <style>
-        .container {
-            height: 3000px;
-            width: 1024px;
-            margin: 0 auto;
-            background: gray;
-            position: relative;
+        .content {
+            min-width: 30%;
+            height: 200vh;
+            margin: 0 300px;
+            background: #797878;
         }
 
-        .back-top {
-            visibility: hidden;
+        .back-top-button {
+            display: none;
             position: fixed;
-            background: #d9534f;
-            width: 50px;
-            height: 50px;
-            overflow: hidden;
-            right: 100px;
-            bottom: 100px;
+            background: #e5ff00;
+            right: 40px;
+            bottom: 40px;
+            font-size: 40px;
+            width: 60px;
             text-align: center;
+            padding-top: 10px;
             cursor: pointer;
-            opacity: 0;
-            transition: all 0.5s;
         }
 
-        .back-top.show {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .back-top:hover {
-            opacity: 0.8
-        }
-
-        .back-top:before {
-            content: "^";
-            color: white;
-            font-size: 50px;
+        .show {
+            display: block;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="container">
-    </div>
-    <div class="back-top"></div>
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <div class="content"></div>
+    <div class="back-top-button">^</div>
     <script>
-        function BackTop($node) {
-            var timer;
-            $node.on("click", function () {
-                window.scrollTo(0, 0);
-            })
-            window.onscroll = function () {
-                console.log("onscroll")
-
-                // 防止事件过多
-                clearTimeout(timer)
-                timer = setTimeout(function () {
-                    var windowH = $(window).height();
-                    var scrollTop = $(window).scrollTop();
-                    if (scrollTop > windowH * 0.5) {
-                        $node.addClass("show")
+        var timer;
+        $(".back-top-button").click(function () {
+            window.scroll(0, 0);
+        });
+        window.onscroll = function () {
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                {
+                    if (window.scrollY > window.innerHeight * 0.5) {
+                        $(".back-top-button").addClass("show");
+                    } else {
+                        $(".back-top-button").removeClass("show");
                     }
-                    if (scrollTop < windowH * 0.5) {
-                        $node.removeClass("show")
-                    }
-                }, 50)
-            }
+                }
+            }, 50);
+            console.log(timer);
         }
-        var ele = $(".back-top")
-        new BackTop(ele);
+
+
     </script>
 </body>
 
