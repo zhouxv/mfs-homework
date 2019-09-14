@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>磁贴</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .top {
+            height: 10vh;
+        }
+
+        .nav {
+            width:75vh;
+            height: 5vh;
+            background: rgb(250, 185, 185);
+            margin:0 auto;
+        }
+
+        .content {
+            width:75vh;
+            height: 200vh;
+            margin: 0 auto;
+            background: #aaa;
+        }
+
+        .fix{
+            position: fixed;
+            top:0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top"></div>
+    <div class="nav"></div>
+    <div class="content"></div>
+    <script>
+    var timer;
+        window.onscroll = function () {
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                {
+                    if (window.scrollY > 76) {
+                        $(".nav").addClass("fix");
+                    } else {
+                        $(".nav").removeClass("fix");
+                    }
+                }
+            }, 50);
+            console.log(timer);
+        }
+    </script>
+</body>
+
+</html>
